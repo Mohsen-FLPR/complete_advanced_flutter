@@ -155,9 +155,10 @@ extension FlowStateExtension on FlowState {
   _isThereCurrentDialogShowing(BuildContext context) =>
       ModalRoute.of(context)?.isCurrent != true;
 
-  showPopUp(BuildContext context, StateRendererType stateRendererType,
-      String message,{String title = EMPTY}) {
-    WidgetsBinding.instance?.addPostFrameCallback((_) => showDialog(
+  showPopUp(
+      BuildContext context, StateRendererType stateRendererType, String message,
+      {String title = EMPTY}) {
+    WidgetsBinding.instance.addPostFrameCallback((_) => showDialog(
         context: context,
         builder: (BuildContext context) => StateRenderer(
               stateRendererType: stateRendererType,

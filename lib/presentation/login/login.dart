@@ -36,7 +36,7 @@ class _LoginViewState extends State<LoginView> {
     _viewModel.isUserLoggedInSuccessfullyStreamController.stream
         .listen((token) {
       // navigate to main screen
-      SchedulerBinding.instance?.addPostFrameCallback((_) {
+      SchedulerBinding.instance.addPostFrameCallback((_) {
         _appPreferences.setUserToken(token);
         _appPreferences.setIsUserLoggedIn();
         resetModules();
